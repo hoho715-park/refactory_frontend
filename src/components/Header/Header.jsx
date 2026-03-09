@@ -5,6 +5,7 @@ import './Header.css';
 
 function Header() {
   const [isMoreOpen, setIsMoreOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const timeoutRef = useRef(null);
 
   const handleMouseEnter = () => {
@@ -20,6 +21,14 @@ function Header() {
     }, 200);
   };
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <header className="header">
       <div className="header-container">
@@ -27,13 +36,19 @@ function Header() {
           <img src={logo} alt="RE:FACTORY" className="logo" />
         </Link>
 
-        <nav className="nav">
+        <button className="hamburger-btn" onClick={toggleMobileMenu}>
+          <span className={`hamburger-line ${isMobileMenuOpen ? 'open' : ''}`}></span>
+          <span className={`hamburger-line ${isMobileMenuOpen ? 'open' : ''}`}></span>
+          <span className={`hamburger-line ${isMobileMenuOpen ? 'open' : ''}`}></span>
+        </button>
+
+        <nav className={`nav ${isMobileMenuOpen ? 'nav-open' : ''}`}>
           <ul className="nav-list">
             <li className="nav-item">
-              <Link to="/about-us" className="nav-link">About Us</Link>
+              <Link to="/about-us" className="nav-link" onClick={closeMobileMenu}>About Us</Link>
             </li>
             <li className="nav-item">
-              <Link to="/code-insight" className="nav-link">Code Insight</Link>
+              <Link to="/code-insight" className="nav-link" onClick={closeMobileMenu}>Code Insight</Link>
             </li>
             <li
               className="nav-item has-dropdown"
@@ -47,21 +62,24 @@ function Header() {
               {isMoreOpen && (
                 <ul className="dropdown-menu">
                   <li>
-                    <Link to="/faq" className="dropdown-link">FAQ</Link>
+                    <Link to="/faq" className="dropdown-link" onClick={closeMobileMenu}>FAQ</Link>
                   </li>
                   <li>
-                    <Link to="/community" className="dropdown-link">Community</Link>
+                    <Link to="/community" className="dropdown-link" onClick={closeMobileMenu}>Community</Link>
                   </li>
                   <li>
-                    <Link to="/contact-us" className="dropdown-link">Contact Us</Link>
+                    <Link to="/contact-us" className="dropdown-link" onClick={closeMobileMenu}>Contact Us</Link>
                   </li>
                 </ul>
               )}
             </li>
+            <li className="nav-item mobile-login">
+              <Link to="/login" className="login-btn" onClick={closeMobileMenu}>LOGIN</Link>
+            </li>
           </ul>
         </nav>
 
-        <Link to="/login" className="login-btn">LOGIN</Link>
+        <Link to="/login" className="login-btn desktop-login">LOGIN</Link>
       </div>
     </header>
   );
