@@ -8,6 +8,7 @@ function FAQ() {
       <main className="page-content">
         <h1>FAQ</h1>
       </main>
+      1
     </div>
   );
 }
