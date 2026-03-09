@@ -1,0 +1,26 @@
+.about-us-page {
+  min-height: 100vh;
+  background-color: #f5f9fc;
+}
+
+.page-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 60px 60px;
+}
+
+.page-content h1 {
+  font-family: 'Inter', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #2d4a6f;
+  margin-bottom: 30px;
+}
+
+.page-content p {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  color: #666666;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
