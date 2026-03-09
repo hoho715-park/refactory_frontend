@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/main-page/logo.png';
 import './Header.css';
@@ -6,9 +6,20 @@ import './Header.css';
 function Header() {
   const [isMoreOpen, setIsMoreOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const timeoutRef = useRef(null);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const handleMouseEnter = () => {
+    if (isMobile) return;
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
@@ -16,17 +27,26 @@ function Header() {
   };
 
   const handleMouseLeave = () => {
+    if (isMobile) return;
     timeoutRef.current = setTimeout(() => {
       setIsMoreOpen(false);
     }, 200);
   };
 
+  const handleMoreClick = () => {
+    if (isMobile) {
+      setIsMoreOpen(!isMoreOpen);
+    }
+  };
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+    setIsMoreOpen(false);
   };
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
+    setIsMoreOpen(false);
   };
 
   return (
@@ -51,13 +71,13 @@ function Header() {
               <Link to="/code-insight" className="nav-link" onClick={closeMobileMenu}>Code Insight</Link>
             </li>
             <li
-              className="nav-item has-dropdown"
+              className={`nav-item has-dropdown ${isMoreOpen ? 'dropdown-open' : ''}`}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              <button className="nav-link dropdown-toggle">
+              <button className="nav-link dropdown-toggle" onClick={handleMoreClick}>
                 More
-                <span className="dropdown-arrow">▼</span>
+                <span className={`dropdown-arrow ${isMoreOpen ? 'arrow-open' : ''}`}>▼</span>
               </button>
               {isMoreOpen && (
                 <ul className="dropdown-menu">

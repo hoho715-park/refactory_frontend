@@ -74,7 +74,7 @@
   transition: transform 0.2s;
 }
 
-.has-dropdown:hover .dropdown-arrow {
+.arrow-open {
   transform: rotate(180deg);
 }
 
