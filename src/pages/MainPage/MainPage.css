@@ -1,0 +1,14 @@
+.main-page {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.hero-section {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('../../assets/main-page/main_hero.png');
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-color: #e8f4fc;
+}
