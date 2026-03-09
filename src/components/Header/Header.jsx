@@ -1,10 +1,24 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/main-page/logo.png';
 import './Header.css';
 
 function Header() {
   const [isMoreOpen, setIsMoreOpen] = useState(false);
+  const timeoutRef = useRef(null);
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setIsMoreOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsMoreOpen(false);
+    }, 200);
+  };
 
   return (
     <header className="header">
@@ -23,8 +37,8 @@ function Header() {
             </li>
             <li
               className="nav-item has-dropdown"
-              onMouseEnter={() => setIsMoreOpen(true)}
-              onMouseLeave={() => setIsMoreOpen(false)}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
             >
               <button className="nav-link dropdown-toggle">
                 More
