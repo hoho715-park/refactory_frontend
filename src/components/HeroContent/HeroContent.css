@@ -25,9 +25,9 @@
 
 .hero-description {
   font-family: 'Inter', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 16px;
-  color: #666666;
+  color: #222222;
   line-height: 1.4;
   margin: 0 0 40px 0;
 }
@@ -78,10 +78,13 @@
 /* Mobile */
 @media (max-width: 768px) {
   .hero-content {
-    left: 30px;
-    right: 30px;
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, -50%);
     max-width: none;
-    top: 45%;
+    width: calc(100% - 60px);
+    top: 50%;
+    text-align: center;
   }
 
   .hero-title {
@@ -108,9 +111,7 @@
 /* Small Mobile */
 @media (max-width: 480px) {
   .hero-content {
-    left: 20px;
-    right: 20px;
-    top: 40%;
+    width: calc(100% - 40px);
   }
 
   .hero-title {
