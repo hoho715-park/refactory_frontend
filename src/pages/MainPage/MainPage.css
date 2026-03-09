@@ -4,6 +4,7 @@
 }
 
 .hero-section {
+  position: relative;
   width: 100%;
   min-height: 100vh;
   background-image: url('../../assets/main-page/main_hero.png');

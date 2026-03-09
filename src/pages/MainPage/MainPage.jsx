@@ -1,10 +1,13 @@
+import Header from '../../components/Header';
+import HeroContent from '../../components/HeroContent';
 import './MainPage.css';
 
 function MainPage() {
   return (
     <div className="main-page">
+      <Header />
       <section className="hero-section">
-        {/* Hero content will be added in subsequent development */}
+        <HeroContent />
       </section>
     </div>
   );
