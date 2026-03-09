@@ -13,7 +13,7 @@ function HeroContent() {
         <br />
         더 나은 형태로 다시 설계합니다.
       </p>
-      <Link to="/diagnose" className="hero-cta-btn">
+      <Link to="/code-insight" className="hero-cta-btn">
         코드 진단하기
       </Link>
     </div>
