@@ -69,10 +69,6 @@
 }
 
 .upload-icon {
-  width: 56px;
-  height: 56px;
-  background-color: #f0f5fa;
-  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
