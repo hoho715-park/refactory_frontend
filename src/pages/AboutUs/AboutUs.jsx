@@ -3,6 +3,7 @@ import './AboutUs.css';
 
 import AboutRefactory from './AboutRefactory';
 import WhyRefactory from './WhyRefactory';
+import KeyFeatures from './KeyFeatures';
 
 export default function AboutUs() {
   return (
@@ -25,6 +26,11 @@ export default function AboutUs() {
         <WhyRefactory />
       </section>
 
-    </div>
+      {/* Key Features */}
+      <section className="about-section">
+        <KeyFeatures />
+      </section>
+
+    </div>  
   );
 }
