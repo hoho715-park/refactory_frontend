@@ -39,17 +39,17 @@
   font-size: 16px;
   color: #555555;
   background-color: white;
-  border: 1px solid #dddddd;
-  border-radius: 8px;
+  border: none;
+  border-radius: 12px;
   padding: 14px 32px;
   text-decoration: none;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   transition: all 0.2s;
 }
 
 .hero-cta-btn:hover {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
   transform: translateY(-2px);
 }
 
