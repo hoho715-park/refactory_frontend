@@ -2,6 +2,7 @@ import Header from '../../components/Header';
 import './AboutUs.css';
 
 import AboutRefactory from './AboutRefactory';
+import WhyRefactory from './WhyRefactory';
 
 export default function AboutUs() {
   return (
@@ -17,6 +18,11 @@ export default function AboutUs() {
       {/* About RE:FACTORY */}
       <section className="about-section">
         <AboutRefactory />
+      </section>
+
+      {/* Why RE:FACTORY */}
+      <section className="about-section">
+        <WhyRefactory />
       </section>
 
     </div>
