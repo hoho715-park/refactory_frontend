@@ -15,22 +15,3 @@
   justify-content:center;
   align-items:center;
 }
-
-/* ABOUT US 전용 헤더 */
-.header-light{
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(10px);
-}
-
-.header-light{
-  background: rgba(15,23,42,0.6);
-  backdrop-filter: blur(8px);
-}
-
-.header-light .nav-link{
-  color:#f1f5f9;
-}
-
-.header-light .dropdown-toggle{
-  color:#f1f5f9;
-}
