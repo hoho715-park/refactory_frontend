@@ -10,7 +10,7 @@ export default function AboutUs() {
   return (
     <div className="about-container">
 
-      <Header />
+      <Header variant="light" />
 
       {/* 맨 위 타이틀 섹션 */}
       <section className="about-title-section">

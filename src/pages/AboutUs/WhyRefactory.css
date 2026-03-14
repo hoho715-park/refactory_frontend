@@ -1,44 +1,49 @@
-.why-refactory-container{
+.why-refactory{
+
   width:100%;
-  max-width:1000px;
-  text-align:center;
-}
+  height:100%;
 
-.why-refactory-title{
-  font-size:40px;
-  font-weight:700;
-  margin-bottom:30px;
-  color:#4a6c4c;
-}
-
-.why-refactory-text{
-  font-size:18px;
-  margin-bottom:40px;
-  color:#333;
-}
-
-/* 카드 영역 */
-
-.why-refactory-cards{
   display:flex;
+  flex-direction:column;
+
   justify-content:center;
-  gap:30px;
+  align-items:center;
+
+  background:#f8fafc;
+
+}
+
+.section-title{
+
+  font-size:48px;
+  margin-bottom:60px;
+
+}
+
+.why-cards{
+
+  display:flex;
+  gap:60px;
+
 }
 
 .why-card{
-  background:#ece7df;
-  padding:20px;
+
+  width:300px;
+
+  padding:30px;
+
+  background:white;
+
   border-radius:12px;
-  width:220px;
 
-  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+
+  transition:0.3s;
 }
 
-.why-card h3{
-  font-size:18px;
-  margin-bottom:10px;
-}
+.why-card:hover{
 
-.why-card p{
-  font-size:14px;
+  transform:translateY(-10px);
+
 }

@@ -1,49 +1,69 @@
 import "./KeyFeatures.css";
 
-export default function KeyFeatures() {
+const features = [
 
-  const features = [
-    {
-      title: "Code Quality Analysis",
-      items: ["코드 구조 분석", "코드 품질 평가"]
-    },
-    {
-      title: "LLM Semantic Analysis",
-      items: ["코드 의미 파악", "코드 문맥 분석"]
-    },
-    {
-      title: "Visualization",
-      items: ["코드 관계 시각화", "다이어그램 제공"]
-    },
-    {
-      title: "Refactoring Support",
-      items: ["코드 문제 인식", "리팩토링 포인트 추천"]
-    }
-  ];
+  {
+    title:"Code Quality Analysis",
+    items:[
+      "코드 구조 분석",
+      "정적 메트릭 분석",
+      "코드 품질 평가"
+    ]
+  },
 
-  return (
-    <div className="keyfeatures">
+  {
+    title:"LLM Semantic Analysis",
+    items:[
+      "코드 의미 분석",
+      "맥락 기반 이해",
+      "응집도 평가"
+    ]
+  },
 
-      <h2 className="keyfeatures-title">Key Features</h2>
+  {
+    title:"Refactoring Guide",
+    items:[
+      "리팩토링 방향 제시",
+      "코드 개선 추천",
+      "품질 향상 지원"
+    ]
+  }
 
-      <div className="keyfeatures-grid">
+]
 
-        {features.map((feature, index) => (
-          <div className="keyfeatures-card" key={index}>
+function KeyFeatures(){
+
+  return(
+
+    <div className="key-features">
+
+      <h1 className="section-title">
+        Key Features
+      </h1>
+
+      <div className="feature-cards">
+
+        {features.map((feature,index)=>(
+
+          <div className="feature-card" key={index}>
 
             <h3>{feature.title}</h3>
 
             <ul>
-              {feature.items.map((item, i) => (
+              {feature.items.map((item,i)=>(
                 <li key={i}>{item}</li>
               ))}
             </ul>
 
           </div>
+
         ))}
 
       </div>
 
     </div>
-  );
+
+  )
 }
+
+export default KeyFeatures

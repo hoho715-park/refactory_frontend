@@ -1,30 +1,37 @@
 import "./OurValues.css";
 
-export default function OurValues() {
-  return (
-    <div className="ourvalues-container">
+function OurValues(){
 
-      <h2 className="ourvalues-title">Our Values</h2>
+  return(
 
-      <div className="values-grid">
+    <div className="our-values">
 
-        <div className="value-card">
+      <h1 className="section-title">
+        Our Values
+      </h1>
+
+      <div className="values">
+
+        <div className="value">
           <h3>Innovation</h3>
-          <p>새로운 기술과 아이디어를 통해 더 나은 개발 환경을 만듭니다.</p>
+          <p>LLM 기반 코드 분석 기술 혁신</p>
         </div>
 
-        <div className="value-card">
-          <h3>Quality</h3>
-          <p>코드 품질을 중요하게 생각하며 지속적인 개선을 추구합니다.</p>
+        <div className="value">
+          <h3>Reliability</h3>
+          <p>신뢰 가능한 코드 품질 평가</p>
         </div>
 
-        <div className="value-card">
-          <h3>Collaboration</h3>
-          <p>개발자와 AI가 협력하는 새로운 개발 방식을 지향합니다.</p>
+        <div className="value">
+          <h3>Developer First</h3>
+          <p>개발자를 위한 도구</p>
         </div>
 
       </div>
 
     </div>
-  );
+
+  )
 }
+
+export default OurValues
