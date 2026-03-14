@@ -1,26 +1,36 @@
-.about-us-page {
-  min-height: 100vh;
-  background-color: #f5f9fc;
+.about-container{
+  height:100vh;
+  overflow-y:scroll;
+
+  scroll-snap-type:y mandatory;
+  scroll-behavior:smooth;
 }
 
-.page-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 120px 60px 60px;
+.about-section{
+  height:100vh;
+
+  scroll-snap-align:start;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
-.page-content h1 {
-  font-family: 'Inter', sans-serif;
-  font-size: 48px;
-  font-weight: 700;
-  color: #2d4a6f;
-  margin-bottom: 30px;
+/* ABOUT US 전용 헤더 */
+.header-light{
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
 }
 
-.page-content p {
-  font-family: 'Inter', sans-serif;
-  font-size: 18px;
-  color: #666666;
-  line-height: 1.8;
-  margin-bottom: 20px;
+.header-light{
+  background: rgba(15,23,42,0.6);
+  backdrop-filter: blur(8px);
+}
+
+.header-light .nav-link{
+  color:#f1f5f9;
+}
+
+.header-light .dropdown-toggle{
+  color:#f1f5f9;
 }
