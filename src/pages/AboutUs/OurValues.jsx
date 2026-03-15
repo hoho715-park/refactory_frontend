@@ -1,37 +1,46 @@
+import React from "react";
 import "./OurValues.css";
 
-function OurValues(){
+const values = [
+  {
+    icon: "💡",
+    title: "Code Quality First",
+    desc: "우리는 코드의 구조뿐 아니라 의미까지 이해하여 더 높은 품질의 소프트웨어 개발을 지원합니다."
+  },
+  {
+    icon: "🧠",
+    title: "Explainable AI",
+    desc: "LLM 기반 분석을 통해 코드 품질을 설명 가능한 방식으로 평가합니다."
+  },
+  {
+    icon: "⚡",
+    title: "Developer Productivity",
+    desc: "개발자가 코드 개선 포인트를 빠르게 파악하고 더 효율적으로 개발할 수 있도록 돕습니다."
+  },
+  {
+    icon: "🚀",
+    title: "Continuous Improvement",
+    desc: "지속적인 코드 개선과 리팩토링을 통해 더 나은 소프트웨어를 만들어갑니다."
+  }
+];
 
-  return(
+export default function OurValues() {
+  return (
+    <section className="values-section">
+      <h2 className="values-title">Our Values</h2>
+      <p className="values-subtitle">
+        Refactory가 추구하는 핵심 가치
+      </p>
 
-    <div className="our-values">
-
-      <h1 className="section-title">
-        Our Values
-      </h1>
-
-      <div className="values">
-
-        <div className="value">
-          <h3>Innovation</h3>
-          <p>LLM 기반 코드 분석 기술 혁신</p>
-        </div>
-
-        <div className="value">
-          <h3>Reliability</h3>
-          <p>신뢰 가능한 코드 품질 평가</p>
-        </div>
-
-        <div className="value">
-          <h3>Developer First</h3>
-          <p>개발자를 위한 도구</p>
-        </div>
-
+      <div className="values-grid">
+        {values.map((v, i) => (
+          <div className="value-card" key={i}>
+            <div className="value-icon">{v.icon}</div>
+            <div className="value-title">{v.title}</div>
+            <p className="value-desc">{v.desc}</p>
+          </div>
+        ))}
       </div>
-
-    </div>
-
-  )
+    </section>
+  );
 }
-
-export default OurValues
