@@ -1,57 +1,220 @@
-.key-features{
+.features{
+
+  width:100%;
+  min-height:100vh;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  padding:120px 20px;
+
+  background:linear-gradient(
+    180deg,
+    #f8fafc 0%,
+    #eef2ff 100%
+  );
+
+}
+
+/* 제목 */
+
+.features-title{
+
+  font-size:46px;
+  font-weight:800;
+
+  margin-bottom:80px;
+
+  background:linear-gradient(90deg,#3b82f6,#6366f1);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+}
+
+/* 그리드 */
+
+.features-grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(2,360px);
+
+  gap:40px;
+
+}
+
+/* 카드 */
+
+.feature-card{
+
+  position:relative;
+
+  width:360px;
+  height:260px;
+
+  border-radius:22px;
+
+  background:white;
+
+  overflow:hidden;
+
+  cursor:pointer;
+
+  box-shadow:
+  0 15px 40px rgba(0,0,0,0.06);
+
+  transition:all .3s ease;
+
+}
+
+.feature-card:hover{
+
+  transform:translateY(-8px);
+
+  box-shadow:
+  0 25px 60px rgba(0,0,0,0.12);
+
+}
+
+/* 앞면 */
+
+.card-front{
+
+  position:absolute;
 
   width:100%;
   height:100%;
 
   display:flex;
   flex-direction:column;
-
-  justify-content:center;
   align-items:center;
+  justify-content:center;
 
-  background:#e2e8f0;
-
-}
-
-.feature-cards{
-
-  display:flex;
-
-  gap:40px;
+  transition:opacity .3s;
 
 }
 
-.feature-card{
+.feature-icon{
 
-  width:260px;
+  font-size:60px;
 
-  padding:30px;
-
-  background:white;
-
-  border-radius:12px;
-
-  box-shadow:0 10px 25px rgba(0,0,0,0.1);
-
-  transition:0.3s;
-}
-
-.feature-card:hover{
-
-  transform:translateY(-10px);
+  margin-bottom:20px;
 
 }
 
-.feature-card ul{
+.feature-title{
 
-  margin-top:15px;
+  font-size:20px;
+  font-weight:600;
 
-  padding-left:18px;
+  color:#334155;
 
 }
 
-.feature-card li{
+/* hover */
 
-  margin-bottom:8px;
+.card-hover{
+
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:100%;
+
+  padding:28px;
+
+  box-sizing:border-box;
+
+  background:linear-gradient(
+    135deg,
+    #3b82f6,
+    #6366f1
+  );
+
+  color:white;
+
+  opacity:0;
+
+  transform:translateY(100%);
+
+  transition:all .35s ease;
+
+}
+
+.feature-card:hover .card-front{
+
+  opacity:0;
+
+}
+
+.feature-card:hover .card-hover{
+
+  opacity:1;
+
+  transform:translateY(0);
+
+}
+
+/* hover 내용 */
+
+.card-hover h3{
+
+  font-size:20px;
+
+  margin-bottom:14px;
+
+}
+
+.card-hover ul{
+
+  list-style:none;
+
+  padding-left:0;
+
+  margin-bottom:12px;
+
+}
+
+.card-hover li{
+
+  margin-bottom:6px;
+
+  font-size:14px;
+
+}
+
+/* 태그 */
+
+.feature-tags{
+
+  margin-bottom:10px;
+
+}
+
+.feature-tags span{
+
+  background:rgba(255,255,255,0.25);
+
+  padding:5px 10px;
+
+  border-radius:8px;
+
+  margin-right:6px;
+
+  font-size:12px;
+
+}
+
+/* 설명 */
+
+.card-hover p{
+
+  font-size:13px;
+
+  opacity:0.9;
 
 }

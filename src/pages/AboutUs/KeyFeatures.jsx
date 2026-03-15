@@ -1,69 +1,90 @@
+import React from "react";
 import "./KeyFeatures.css";
 
 const features = [
-
   {
-    title:"Code Quality Analysis",
-    items:[
+    icon: "📊",
+    title: "Code Quality Analysis",
+    detailTitle: "코드 품질 분석",
+    items: [
       "코드 구조 분석",
-      "정적 메트릭 분석",
       "코드 품질 평가"
-    ]
+    ],
+    tags: ["결합도", "복잡도", "응집도", "크기"]
   },
-
   {
-    title:"LLM Semantic Analysis",
-    items:[
-      "코드 의미 분석",
-      "맥락 기반 이해",
-      "응집도 평가"
-    ]
+    icon: "🧠",
+    title: "LLM Semantic Analysis",
+    detailTitle: "LLM 기반 코드 분석",
+    items: [
+      "코드 의미 파악",
+      "코드 문맥 분석"
+    ],
+    desc: "응집도는 정성적 의미이므로 LLM 기반 분석 활용"
   },
-
   {
-    title:"Refactoring Guide",
-    items:[
-      "리팩토링 방향 제시",
-      "코드 개선 추천",
-      "품질 향상 지원"
+    icon: "📈",
+    title: "Visualization",
+    detailTitle: "코드 구조 시각화",
+    items: [
+      "코드 관계 시각화",
+      "분석 기반 다이어그램 제공"
+    ],
+    desc: "복잡한 코드 구조를 직관적으로 이해"
+  },
+  {
+    icon: "⚙️",
+    title: "Refactoring Support",
+    detailTitle: "리팩토링 제안",
+    items: [
+      "코드 문제 인식",
+      "리팩토링 포인트 제안",
+      "개발 의사결정 지원"
     ]
   }
+];
 
-]
+export default function KeyFeatures() {
+  return (
+    <section className="features">
 
-function KeyFeatures(){
+      <h2 className="features-title">Key Features</h2>
 
-  return(
-
-    <div className="key-features">
-
-      <h1 className="section-title">
-        Key Features
-      </h1>
-
-      <div className="feature-cards">
-
-        {features.map((feature,index)=>(
-
+      <div className="features-grid">
+        {features.map((f, index) => (
           <div className="feature-card" key={index}>
 
-            <h3>{feature.title}</h3>
+            <div className="card-front">
+              <div className="feature-icon">{f.icon}</div>
+              <div className="feature-title">{f.title}</div>
+            </div>
 
-            <ul>
-              {feature.items.map((item,i)=>(
-                <li key={i}>{item}</li>
-              ))}
-            </ul>
+            <div className="card-hover">
+
+              <h3>{f.detailTitle}</h3>
+
+              <ul>
+                {f.items.map((item, i) => (
+                  <li key={i}>✔ {item}</li>
+                ))}
+              </ul>
+
+              {f.tags && (
+                <div className="feature-tags">
+                  {f.tags.map((tag, i) => (
+                    <span key={i}>{tag}</span>
+                  ))}
+                </div>
+              )}
+
+              {f.desc && <p>{f.desc}</p>}
+
+            </div>
 
           </div>
-
         ))}
-
       </div>
 
-    </div>
-
-  )
+    </section>
+  );
 }
-
-export default KeyFeatures
