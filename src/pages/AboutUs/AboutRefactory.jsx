@@ -1,5 +1,5 @@
 import "./AboutRefactory.css";
-import logo from "../../assets/aboutus-page/logo_light.gif";
+import logo from "../../assets/aboutus-page/logo_dark.gif";
 
 function AboutRefactory() {
   return (
