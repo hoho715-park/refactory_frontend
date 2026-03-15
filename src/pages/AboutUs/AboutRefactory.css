@@ -1,34 +1,108 @@
 .about-refactory{
 
   width:100%;
-  height:100%;
+  min-height:100vh;
 
   display:flex;
-  flex-direction:column;
-
   justify-content:center;
   align-items:center;
 
-  background:linear-gradient(135deg,#0f172a,#1e293b);
+  padding:120px 20px;
+
+  background:
+    radial-gradient(circle at 30% 20%, #1e3a8a33, transparent 40%),
+    radial-gradient(circle at 70% 80%, #6366f133, transparent 40%),
+    linear-gradient(135deg,#020617,#0f172a);
 
   color:white;
-
   text-align:center;
 }
 
-.title{
-  font-size:70px;
-  font-weight:700;
-  margin-bottom:20px;
+/* 중앙 컨테이너 */
+
+.hero-container{
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+  max-width:900px;
 }
+
+/* 로고 */
+
+.logo_gif{
+
+  width:300px;
+  margin-bottom:35px;
+  filter:drop-shadow(0px 12px 35px rgba(99,102,241,0.45));
+  animation:float 4s ease-in-out infinite;
+}
+
+/* 로고 떠있는 느낌 */
+
+@keyframes float{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-12px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
+
+/* 타이틀 */
+
+.title{
+
+  font-size:76px;
+  font-weight:800;
+
+  margin-bottom:22px;
+
+  letter-spacing:3px;
+
+  background:linear-gradient(90deg,#60a5fa,#a78bfa);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* 서브타이틀 */
 
 .subtitle{
+
   font-size:30px;
-  margin-bottom:20px;
+  font-weight:500;
+
+  margin-bottom:32px;
+
+  color:#cbd5f5;
 }
 
+/* 설명 */
+
 .description{
-  max-width:700px;
-  line-height:1.6;
-  opacity:0.9;
+
+  font-size:19px;
+
+  line-height:1.7;
+
+  max-width:680px;
+
+  color:#d1d5db;
+}
+
+/* 강조 */
+
+.description span{
+
+  color:#60a5fa;
+
+  font-weight:600;
 }
