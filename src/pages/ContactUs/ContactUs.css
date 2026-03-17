@@ -1,5 +1,6 @@
 .contact-us-page {
   background-color: #EDF5FC;
+  overflow-x: hidden;
 }
 
 .contact-container {
@@ -15,7 +16,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
-  align-items: center;
+  align-items: stretch;
 }
 
 .contact-form-section {
@@ -25,15 +26,20 @@
 
 .contact-image-section {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: stretch;
+  margin-right: calc(-90px - max(0px, (100vw - 1400px) / 2));
+  margin-top: -220px;
+  overflow: hidden;
 }
 
 .contact-illustration {
   width: 100%;
-  max-width: 500px;
-  height: auto;
-  object-fit: contain;
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
 }
 
 /* 제목 스타일 */
@@ -182,7 +188,7 @@
 .footer-right-col {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   margin-left: 28px;
   padding-left: 28px;
   border-left: 1px solid rgba(108, 114, 120, 0.22);
@@ -210,11 +216,41 @@
   height: 30px;
 }
 
+.footer-social-links {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #6c7278;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-social-link:hover {
+  color: #8bb2db;
+}
+
+.footer-social-icon {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
 /* 저작권 → 오른쪽 맨 아래 (예전에 했던 값 그대로) */
 .footer-copyright {
   position: absolute;
   bottom: 24px;
-  right: 100px;
+  right: 24px;
   font-family: 'Inter', sans-serif;
   font-size: 14px;
   font-weight: 500;
