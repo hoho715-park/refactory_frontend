@@ -139,7 +139,6 @@ function ContactUs() {
                   <p>refactory@hongik.ac.kr</p>
                   <p>
                     Hongik University,<br />
-                    Sejong Campus<br />
                     Jochiwon-eup Sejong-si 30016
                   </p>
                   <p>044-860-2114</p>
