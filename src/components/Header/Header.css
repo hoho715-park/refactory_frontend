@@ -264,24 +264,3 @@
     width: 100%;
   }
 }
-
-/* AboutUs 전용 투명 헤더 */
-.header-transparent{
-  background: transparent;
-}
-
-.header-transparent .nav-link{
-  color:#f1f5f9;
-}
-
-.header-transparent .dropdown-toggle{
-  color:#f1f5f9;
-}
-
-.header-transparent .dropdown-arrow{
-  color:#f1f5f9;
-}
-
-.header-transparent .hamburger-line{
-  background:#f1f5f9;
-}

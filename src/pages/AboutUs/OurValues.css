@@ -9,7 +9,7 @@
 
   padding:120px 20px;
 
-  background:#eef2ff;
+  background:#f5f9fc;
 }
 
 /* 내부 컨테이너 (추가🔥) */
@@ -25,7 +25,7 @@
   font-size:46px;
   text-align: center;
   font-weight:800;
-  margin-bottom:16px;
+  margin-bottom:40px;
 
   background:#7492B7;
   -webkit-background-clip:text;
@@ -34,18 +34,18 @@
 
 /* 서브타이틀 */
 .values-subtitle{
-  font-size:18px;
+  font-size:20px;
   text-align: center;
   color:#64748b;
-  margin-bottom:70px;
+  margin-bottom:40px;
 }
 
 /* grid */
 .values-grid{
   display:grid;
-  grid-template-columns:repeat(2,340px);
+  grid-template-columns:repeat(2,420px);
 
-  gap:40px;
+  gap:20px;
 
   justify-content:center;    /* ⭐ grid 자체 가운데 */
 }
@@ -54,7 +54,7 @@
 .value-card{
   background:white;
   border-radius:20px;
-  padding:36px;
+  padding:25px;
   text-align:center;
 
   box-shadow:0 15px 40px rgba(0,0,0,0.06);
@@ -73,7 +73,7 @@
 
 /* 아이콘 */
 .value-icon{
-  font-size:34px;
+  font-size:35px;
   width:64px;
   height:64px;
 
@@ -91,13 +91,13 @@
 .value-title{
   font-size:20px;
   font-weight:700;
-  margin-bottom:10px;
+  margin-bottom:8px;
   color:#1e293b;
 }
 
 /* 설명 */
 .value-desc{
-  font-size:14px;
+  font-size:17px;
   color:#64748b;
   line-height:1.6;
 }

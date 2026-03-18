@@ -23,10 +23,10 @@ html {
 /* 살짝 떠있는 느낌 */
 .section-inner {
   width:100%;
-  max-width:1800px;
+  max-width:1400px;
   margin:0 auto;
   border-radius: 30px;
   background: white;
   box-shadow: 0 20px 50px rgba(0,0,0,0.05);
-  padding: 120px 20px;
+  padding: 70px 20px;
 }
