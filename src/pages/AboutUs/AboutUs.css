@@ -1,18 +1,32 @@
-.about-container{
-  height:100vh;
-  overflow-y:scroll;
-
-  scroll-snap-type:y mandatory;
-  scroll-behavior:smooth;
+/* 스크롤 부드럽게 */
+html {
+  scroll-behavior: smooth;
 }
 
-.about-section{
-  height:100vh;
-
-  scroll-snap-align:start;
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
+/* 모든 섹션 공통 */
+.section {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.9s ease;
 }
 
+.section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 섹션 간 연결감 */
+.section + .section {
+  margin-top: -60px; /* 살짝 겹치게 */
+}
+
+/* 살짝 떠있는 느낌 */
+.section-inner {
+  width:100%;
+  max-width:1800px;
+  margin:0 auto;
+  border-radius: 30px;
+  background: white;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+  padding: 120px 20px;
+}

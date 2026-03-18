@@ -12,11 +12,6 @@ export default function AboutUs() {
 
       <Header variant="transparent" />
 
-      {/* 맨 위 타이틀 섹션 */}
-      <section className="about-title-section">
-        <h1 className="about-title">About Us</h1>
-      </section>
-
       {/* About RE:FACTORY */}
       <section className="about-section">
         <AboutRefactory />

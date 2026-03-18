@@ -11,8 +11,7 @@
   /* Our Values와 동일한 배경 */
   background:linear-gradient(
     180deg,
-    #eef2ff 0%,
-    #ffffff 100%
+    #eef2ff 0%
   );
 
   color:#1e293b;
@@ -36,34 +35,12 @@
 
   width:300px;
   margin-bottom:35px;
-
-  filter:drop-shadow(0px 12px 35px rgba(99,102,241,0.35));
-
-  animation:float 4s ease-in-out infinite;
-}
-
-/* 로고 애니메이션 */
-
-@keyframes float{
-
-  0%{
-    transform:translateY(0px);
-  }
-
-  50%{
-    transform:translateY(-12px);
-  }
-
-  100%{
-    transform:translateY(0px);
-  }
-
 }
 
 /* 타이틀 */
 
 .title{
-
+  
   font-size:76px;
   font-weight:800;
 
@@ -71,7 +48,7 @@
 
   letter-spacing:3px;
 
-  background:linear-gradient(90deg,#3b82f6,#6366f1);
+  background:#7492B7;
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }

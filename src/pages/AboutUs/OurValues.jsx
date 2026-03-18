@@ -1,4 +1,4 @@
-import React from "react";
+import useScrollReveal from "../../hooks/useScrollReveal";
 import "./OurValues.css";
 
 const values = [
@@ -25,22 +25,30 @@ const values = [
 ];
 
 export default function OurValues() {
-  return (
-    <section className="values-section">
-      <h2 className="values-title">Our Values</h2>
-      <p className="values-subtitle">
-        Refactory가 추구하는 핵심 가치
-      </p>
+  const ref = useScrollReveal();
 
-      <div className="values-grid">
-        {values.map((v, i) => (
-          <div className="value-card" key={i}>
-            <div className="value-icon">{v.icon}</div>
-            <div className="value-title">{v.title}</div>
-            <p className="value-desc">{v.desc}</p>
-          </div>
-        ))}
+  return (
+    <section ref={ref} className="values-section section">
+
+      <div className="section-inner">
+
+        <h2 className="values-title">Our Values</h2>
+        <p className="values-subtitle">
+          RE:FACTORY가 추구하는 핵심 가치
+        </p>
+
+        <div className="values-grid">
+          {values.map((v, i) => (
+            <div className="value-card" key={i}>
+              <div className="value-icon">{v.icon}</div>
+              <div className="value-title">{v.title}</div>
+              <p className="value-desc">{v.desc}</p>
+            </div>
+          ))}
+        </div>
+
       </div>
+
     </section>
   );
 }

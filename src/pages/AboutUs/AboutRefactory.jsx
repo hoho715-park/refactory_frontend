@@ -1,9 +1,12 @@
 import "./AboutRefactory.css";
+import useScrollReveal from "../../hooks/useScrollReveal";
 import logo from "../../assets/aboutus-page/logo_dark.gif";
 
 function AboutRefactory() {
+  const ref = useScrollReveal();
+
   return (
-    <section className="about-refactory">
+    <section ref={ref} className="about-refactory section"> {/* ⭐ 추가 */}
 
       <div className="hero-container">
 
