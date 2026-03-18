@@ -57,6 +57,13 @@ const faqData = [
 
 function FAQ() {
   const [openItems, setOpenItems] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    question: ''
+  });
 
   const toggleItem = (id) => {
     setOpenItems(prev =>
@@ -65,6 +72,34 @@ function FAQ() {
         : [...prev, id]
     );
   };
+
+  const openModal = () => {
+    setIsModalOpen(true);
+    setIsSubmitted(false);
+    setFormData({ name: '', email: '', question: '' });
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setIsSubmitted(false);
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (formData.name && formData.email && formData.question) {
+      setIsSubmitted(true);
+    }
+  };
+
+  const isFormValid = formData.name && formData.email && formData.question;
 
   return (
     <div className="faq-page">
@@ -121,7 +156,134 @@ function FAQ() {
             </div>
           ))}
         </div>
+
+        <div className="ask-question-section">
+          <p>찾으시는 답변이 없으신가요?</p>
+          <button className="ask-question-btn" onClick={openModal}>
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 5V19M5 12H19"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            질문하기
+          </button>
+        </div>
       </main>
+
+      {isModalOpen && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={closeModal}>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18 6L6 18M6 6L18 18"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+
+            {!isSubmitted ? (
+              <>
+                <div className="modal-header">
+                  <h2>질문하기</h2>
+                  <p>궁금한 점을 남겨주시면 빠르게 답변드리겠습니다.</p>
+                </div>
+
+                <form className="question-form" onSubmit={handleSubmit}>
+                  <div className="form-group">
+                    <label htmlFor="name">이름</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      placeholder="이름을 입력해주세요"
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="email">이메일</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder="답변받으실 이메일을 입력해주세요"
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="question">질문 내용</label>
+                    <textarea
+                      id="question"
+                      name="question"
+                      value={formData.question}
+                      onChange={handleInputChange}
+                      placeholder="궁금한 점을 자유롭게 작성해주세요"
+                      rows="5"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className={`submit-btn ${isFormValid ? 'active' : ''}`}
+                    disabled={!isFormValid}
+                  >
+                    전송하기
+                  </button>
+                </form>
+              </>
+            ) : (
+              <div className="success-message">
+                <div className="success-icon">
+                  <svg
+                    width="64"
+                    height="64"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="12" cy="12" r="10" stroke="#7492B7" strokeWidth="2" />
+                    <path
+                      d="M8 12L11 15L16 9"
+                      stroke="#7492B7"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+                <h2>전송이 완료되었습니다</h2>
+                <p>빠른 시일 내에 입력하신 이메일로 답변드리겠습니다.</p>
+                <button className="close-btn" onClick={closeModal}>
+                  확인
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

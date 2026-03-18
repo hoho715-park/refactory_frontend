@@ -258,3 +258,335 @@
     font-size: 14px;
   }
 }
+
+/* Ask Question Section */
+.ask-question-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 48px;
+  padding: 32px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.ask-question-section p {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #666666;
+  margin: 0;
+}
+
+.ask-question-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #7492B7 0%, #5a7a9e 100%);
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ask-question-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(116, 146, 183, 0.4);
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f9fc;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #666666;
+  transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+  background: #e8eef3;
+  color: #2d4a6f;
+}
+
+/* Modal Header */
+.modal-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.modal-header h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #2d4a6f;
+  margin: 0 0 8px 0;
+}
+
+.modal-header p {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: #666666;
+  margin: 0;
+}
+
+/* Question Form */
+.question-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2d4a6f;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: #333333;
+  background: #f8fafc;
+  border: 2px solid #e8eef3;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #999999;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #7492B7;
+  background: white;
+}
+
+.form-group textarea {
+  resize: none;
+  line-height: 1.6;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  margin-top: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: #c4d3e3;
+  border: none;
+  border-radius: 10px;
+  cursor: not-allowed;
+  transition: all 0.2s ease;
+}
+
+.submit-btn.active {
+  background: linear-gradient(135deg, #7492B7 0%, #5a7a9e 100%);
+  cursor: pointer;
+}
+
+.submit-btn.active:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(116, 146, 183, 0.4);
+}
+
+/* Success Message */
+.success-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.success-icon {
+  margin-bottom: 24px;
+  animation: scaleIn 0.4s ease;
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.success-message h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #2d4a6f;
+  margin: 0 0 12px 0;
+}
+
+.success-message p {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: #666666;
+  margin: 0 0 28px 0;
+  line-height: 1.5;
+}
+
+.close-btn {
+  padding: 14px 48px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #7492B7 0%, #5a7a9e 100%);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(116, 146, 183, 0.4);
+}
+
+/* Modal Responsive */
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 24px;
+    max-width: 100%;
+  }
+
+  .modal-header h2 {
+    font-size: 22px;
+  }
+
+  .ask-question-section {
+    margin-top: 32px;
+    padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-overlay {
+    padding: 16px;
+  }
+
+  .modal-content {
+    padding: 20px;
+  }
+
+  .modal-close {
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .modal-header {
+    margin-bottom: 20px;
+  }
+
+  .modal-header h2 {
+    font-size: 20px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .submit-btn {
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  .ask-question-section {
+    padding: 20px;
+  }
+
+  .ask-question-btn {
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+}
