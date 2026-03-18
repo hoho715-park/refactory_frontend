@@ -1,12 +1,17 @@
 .faq-page {
   min-height: 100vh;
   background-color: #f5f9fc;
+  scroll-behavior: smooth;
 }
 
 /* ==================== Hero Section ==================== */
 .faq-hero {
   position: relative;
-  padding: 220px 40px 80px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 40px 80px;
   background: linear-gradient(135deg, #2d4a6f 0%, #1a3a5c 50%, #0f2940 100%);
   overflow: hidden;
 }
@@ -164,11 +169,61 @@
   background: rgba(255, 255, 255, 0.15);
 }
 
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.scroll-indicator:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.scroll-indicator span {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.scroll-indicator svg {
+  animation: arrowBounce 1.5s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+@keyframes arrowBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+
 /* ==================== Main Content ==================== */
 .faq-content {
+  min-height: 100vh;
   max-width: 900px;
   margin: 0 auto;
-  padding: 60px 40px 80px;
+  padding: 80px 40px 100px;
 }
 
 /* ==================== Category Filter ==================== */
@@ -687,7 +742,16 @@
 /* ==================== Responsive Design ==================== */
 @media (max-width: 768px) {
   .faq-hero {
-    padding: 180px 24px 60px;
+    min-height: 100vh;
+    padding: 120px 24px 80px;
+  }
+
+  .scroll-indicator {
+    bottom: 30px;
+  }
+
+  .scroll-indicator span {
+    font-size: 12px;
   }
 
   .faq-hero-content h1 {
@@ -790,7 +854,16 @@
 
 @media (max-width: 480px) {
   .faq-hero {
-    padding: 160px 16px 48px;
+    min-height: 100vh;
+    padding: 100px 16px 70px;
+  }
+
+  .scroll-indicator {
+    bottom: 20px;
+  }
+
+  .scroll-indicator span {
+    font-size: 11px;
   }
 
   .hero-badge {
