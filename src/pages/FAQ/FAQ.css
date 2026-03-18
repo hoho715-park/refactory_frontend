@@ -3,7 +3,7 @@
   background-color: #f5f9fc;
   overflow-y: auto;
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
 }
 
 /* ==================== Hero Section ==================== */
@@ -223,7 +223,6 @@
 
 /* ==================== Main Content ==================== */
 .faq-content {
-  min-height: 100vh;
   max-width: 900px;
   margin: 0 auto;
   padding: 80px 40px 100px;
