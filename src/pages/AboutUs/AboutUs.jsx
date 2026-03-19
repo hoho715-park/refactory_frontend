@@ -13,22 +13,22 @@ export default function AboutUs() {
       <Header variant="transparent" />
 
       {/* About RE:FACTORY */}
-      <section className="about-section">
+      <section className="about-section" id="about-refactory">
         <AboutRefactory />
       </section>
 
       {/* Why RE:FACTORY */}
-      <section className="about-section">
+      <section className="about-section" id="why-refactory">
         <WhyRefactory />
       </section>
 
       {/* Key Features */}
-      <section className="about-section">
+      <section className="about-section" id="key-features">
         <KeyFeatures />
       </section>
 
       {/* Our Values */}
-      <section className="about-section">
+      <section className="about-section" id="our-values">
         <OurValues />
       </section>
 

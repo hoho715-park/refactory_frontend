@@ -1,254 +1,132 @@
 .why-section{
-
   width:100%;
-  min-height:100vh;
-
-  padding:140px 20px;
-
+  height:100vh;
+  /* padding:140px 20px; 삭제 */
+  padding: 0 20px; /* 좌우 패딩만 유지 */
   box-sizing:border-box;
-
   display:flex;
   flex-direction:column;
   align-items:center;
-
+  justify-content:center; /* 수직 중앙 정렬 추가 */
   background:#f5f9fc;
-
-  opacity:0;
-  transform:translateY(40px);
-  transition:all .8s ease;
 }
-
-.why-section.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* 제목 */
 
 .why-title{
   text-align: center;
   font-size:44px;
   font-weight:800;
-
   margin-bottom:60px;
-
   background:#7492B7;
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-
 }
 
-/* 질문 */
-
 .why-question{
-
   font-size:30px;
   font-weight:600;
-
   text-align:center;
-
   margin-bottom:30px;
-
   line-height:1.5;
-
   color:#1e293b;
-
 }
 
 .why-question span{
   color:#3b82f6;
 }
 
-/* 전체 구조 */
-
 .why-container{
   display:flex;
   align-items:center;
-
   justify-content:space-between;
-
-  max-width:1100px;   /* ⭐ 핵심 */
+  max-width:1100px;
   width:100%;
-
-  margin:0 auto;      /* ⭐ 핵심 (가운데 정렬) */
+  margin:0 auto;
   gap:40px;
 }
 
-/* 문제 박스 */
-
 .problem-box{
-
   width:500px;
-
   padding:34px;
-
   border-radius:20px;
-
   background:#fff;
-
   display:flex;
   flex-direction:column;
   gap:24px;
-
-  box-shadow:
-  0 10px 30px rgba(0,0,0,0.06);
-
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
   border:1px solid #e2e8f0;
-
-}
-
-/* 문제 강조 애니메이션 */
-
-.problem-box{
-
   animation:problemPulse 1.5s infinite;
-
 }
 
 @keyframes problemPulse{
-
-  0% {
-    box-shadow: 0 0 25px rgba(0,0,0,0.08);
-  }
-
-  50% {
-    box-shadow: 0 0 25px rgba(239, 68, 68, 0.4);
-  }
-
-  100% {
-    box-shadow: 0 0 25px rgba(0,0,0,0.08);
-  }
-
+  0% { box-shadow: 0 0 25px rgba(0,0,0,0.08); }
+  50% { box-shadow: 0 0 25px rgba(239, 68, 68, 0.4); }
+  100% { box-shadow: 0 0 25px rgba(0,0,0,0.08); }
 }
 
 .problem-item{
-
   font-size:20px;
   color:#475569;
-
 }
 
-/* 화살표 */
-
 .arrow-line{
-
   width:150px;
   height:3px;
-
   background:#cbd5f5;
-
   position:relative;
-
 }
 
 .arrow-line::after{
-
   content:"";
-
   position:absolute;
-
   right:-10px;
   top:-6px;
-
   border-left:12px solid #334155;
   border-top:8px solid transparent;
   border-bottom:8px solid transparent;
-
 }
 
-/* 중앙 원 */
-
 .center-circle{
-
   width:160px;
   height:160px;
   flex-shrink: 0;
   border-radius:50%;
-
-  background:linear-gradient(
-    135deg,
-    #7492B7
-  );
-
+  background:linear-gradient(135deg, #7492B7);
   color:white;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   text-align:center;
-
   font-weight:700;
   font-size:18px;
-
 }
-
-/* 솔루션 */
 
 .solution-box{
-
   width:630px;
-
   display:flex;
   flex-direction:column;
-
   gap:15px;
-
 }
 
-/* 솔루션 카드 */
-
 .solution-item{
-
   padding:20px;
-
   border-radius:14px;
-
   background:white;
-
   border:1px solid #e2e8f0;
-
-  box-shadow:
-  0 6px 20px rgba(0,0,0,0.05);
-
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  transition: all 0.25s ease;
 }
 
 .solution-item h3{
-
   font-size:20px;
-
   color:#334155;
-
   margin-bottom:8px;
-
 }
 
-/* 설명 */
 .solution-desc{
-
   font-size:18px;
-
   color:#64748b;
-
-  opacity:1;              /* 항상 보이게 */
-  transform:translateY(0); /* 위치 고정 */
-
-  
-
-}
-
-.solution-item{
-  padding:20px;
-
-  border-radius:14px;
-
-  background:white;
-
-  border:1px solid #e2e8f0;
-
-  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-
-  transition: all 0.25s ease;
+  opacity:1;
+  transform:translateY(0);
 }
 
 .solution-item:hover{

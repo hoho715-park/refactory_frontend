@@ -1,9 +1,7 @@
 import "./AboutRefactory.css";
-import useScrollReveal from "../../hooks/useScrollReveal";
 import logo from "../../assets/aboutus-page/logo_dark.gif";
 
 function AboutRefactory() {
-  const ref = useScrollReveal();
   return (
     <section className="about-refactory">
 
@@ -25,7 +23,6 @@ function AboutRefactory() {
           개발자가 이해하기 쉬운 <span>리팩토링 방향</span>을 제시합니다.
         </p>
 
-        {/* 👇 새로 추가된 내비게이션 카드 영역 */}
         <div className="hero-nav-cards">
           <a href="#why-refactory" className="hero-nav-card">
             <span className="nav-icon">❓</span>

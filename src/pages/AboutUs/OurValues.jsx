@@ -1,4 +1,3 @@
-import useScrollReveal from "../../hooks/useScrollReveal";
 import "./OurValues.css";
 
 const values = [
@@ -25,10 +24,8 @@ const values = [
 ];
 
 export default function OurValues() {
-  const ref = useScrollReveal();
-
   return (
-    <section ref={ref} className="values-section section">
+    <section className="values-section section">
 
       <div className="section-inner">
 
