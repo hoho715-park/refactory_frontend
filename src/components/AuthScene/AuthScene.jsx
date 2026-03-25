@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './AuthScene.css';
+import loginVisualImage from '../../assets/auth/login_bg.png';
 
 function AuthScene({ step, onClose, onGoSignup, onGoLogin }) {
   const isOpen = step !== 'closed';
@@ -27,6 +28,12 @@ function AuthScene({ step, onClose, onGoSignup, onGoLogin }) {
         </button>
 
         <div className="auth-login-stage">
+          <div className="auth-login-visual">
+            <div className="auth-login-visual-card">
+              <img src={loginVisualImage} alt="로그인 안내 비주얼" />
+            </div>
+          </div>
+
           <div className="auth-login-panel">
             <div className="auth-brand auth-brand--login">
               <span>RE:</span>
@@ -39,12 +46,13 @@ function AuthScene({ step, onClose, onGoSignup, onGoLogin }) {
               <h2 className="auth-login-title">Login</h2>
 
               <form className="auth-login-form">
-                <input type="text" placeholder="ID" />
+                <input type="text" placeholder="ID" autoComplete="username" />
 
                 <div className="auth-password-wrap">
                   <input
                     type={isPasswordVisible ? 'text' : 'password'}
                     placeholder="Password"
+                    autoComplete="current-password"
                   />
 
                   <button
@@ -202,26 +210,28 @@ function AuthScene({ step, onClose, onGoSignup, onGoLogin }) {
                 </label>
 
                 <div className="signup-email-layout">
-                  <input
-                    type="text"
-                    className="signup-email-id"
-                    placeholder="이메일 아이디"
-                  />
+                  <div className="signup-email-composite">
+                    <input
+                      type="text"
+                      className="signup-email-id"
+                      placeholder="이메일 아이디"
+                    />
 
-                  <div className="signup-at">@</div>
+                    <span className="signup-email-sep signup-at">@</span>
 
-                  <input
-                    type="text"
-                    className="signup-email-domain"
-                    placeholder="이메일 호스트"
-                  />
+                    <input
+                      type="text"
+                      className="signup-email-domain"
+                      placeholder="이메일 호스트"
+                    />
 
-                  <select className="signup-select signup-select-inline" defaultValue="직접입력">
-                    <option>직접입력</option>
-                    <option>naver.com</option>
-                    <option>gmail.com</option>
-                    <option>daum.net</option>
-                  </select>
+                    <select className="signup-email-select" defaultValue="직접입력">
+                      <option>직접입력</option>
+                      <option>naver.com</option>
+                      <option>gmail.com</option>
+                      <option>daum.net</option>
+                    </select>
+                  </div>
                 </div>
               </div>
 
