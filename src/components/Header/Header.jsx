@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import logo from '../../assets/main-page/logo.png';
 import './Header.css';
 
-function Header({ onLoginClick }) {
+function Header({ onLoginClick, variant = "default" }) {
+
   const [isMoreOpen, setIsMoreOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -57,8 +58,10 @@ function Header({ onLoginClick }) {
   };
 
   return (
-    <header className="header">
+    <header className={`header header-${variant}`}>
+
       <div className="header-container">
+
         <Link to="/" className="logo-link">
           <img src={logo} alt="RE:FACTORY" className="logo" />
         </Link>
@@ -71,16 +74,19 @@ function Header({ onLoginClick }) {
 
         <nav className={`nav ${isMobileMenuOpen ? 'nav-open' : ''}`}>
           <ul className="nav-list">
+
             <li className="nav-item">
               <Link to="/about-us" className="nav-link" onClick={closeMobileMenu}>
                 About Us
               </Link>
             </li>
+
             <li className="nav-item">
               <Link to="/code-insight" className="nav-link" onClick={closeMobileMenu}>
                 Code Insight
               </Link>
             </li>
+
             <li
               className={`nav-item has-dropdown ${isMoreOpen ? 'dropdown-open' : ''}`}
               onMouseEnter={handleMouseEnter}
@@ -110,6 +116,7 @@ function Header({ onLoginClick }) {
                   </li>
                 </ul>
               )}
+
             </li>
 
             <li className="nav-item mobile-login">
@@ -117,6 +124,7 @@ function Header({ onLoginClick }) {
                 LOGIN
               </button>
             </li>
+
           </ul>
         </nav>
 
@@ -124,6 +132,7 @@ function Header({ onLoginClick }) {
           LOGIN
         </button>
       </div>
+
     </header>
   );
 }
