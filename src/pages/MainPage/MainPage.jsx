@@ -1,16 +1,20 @@
-import Header from '../../components/Header';
-import HeroContent from '../../components/HeroContent';
-import './MainPage.css';
+import Header from '../../components/Header'
+import HeroContent from '../../components/HeroContent'
+import './MainPage.css'
 
-function MainPage() {
+function MainPage({ onLoginClick }) {
+
   return (
     <div className="main-page">
-      <Header />
+
+      <Header onLoginClick={onLoginClick}/>
+
       <section className="hero-section">
-        <HeroContent />
+        <HeroContent/>
       </section>
+
     </div>
-  );
+  )
 }
 
-export default MainPage;
+export default MainPage
