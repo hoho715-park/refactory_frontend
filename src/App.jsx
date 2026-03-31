@@ -62,6 +62,9 @@ function App() {
             <Route path="/" element={<MainPage onLoginClick={openLogin} />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/code-insight" element={<CodeInsight />} />
+            <Route path="/code-insight/upload" element={<ZipUpload />} />
+            <Route path="/code-insight/github" element={<GitHubConnect />} />
+            <Route path="/code-insight/dashboard" element={<Dashboard />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/community" element={<Community />} />
             <Route path="/contact-us" element={<ContactUs />} />
@@ -77,19 +80,6 @@ function App() {
           onGoLogin={goLogin}
         />
       </div>
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/code-insight" element={<CodeInsight />} />
-        <Route path="/code-insight/upload" element={<ZipUpload />} />
-        <Route path="/code-insight/github" element={<GitHubConnect />} />
-        <Route path="/code-insight/dashboard" element={<Dashboard />} />
-        <Route path="/faq" element={<FAQ />} />
-        <Route path="/community" element={<Community />} />
-        <Route path="/contact-us" element={<ContactUs />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/diagnose" element={<Diagnose />} />
-      </Routes>
     </BrowserRouter>
   );
 }
